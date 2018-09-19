@@ -1,0 +1,212 @@
+entity InsInsureInfo(INS_INSURE_INFO){//非车投保信息业务数据表
+				id	Long	required, //ID	
+				version	Long required,//版本号
+				dataId	String required,//投保数据ID	
+				houseId	Long,//房屋信息ID	
+				invoiceId	Long,//配送信息ID
+				orderId String ,//订单ID
+				personId	Long,//投保人保单相关信息ID
+				policyId	Long required,//保单ID	
+				premiumPrice	BigDecimal,//保单价格	
+				propMapStr	String,//json串数据 CLOB
+				insuredId	Long,//关系人信息ID	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+
+entity InsPPersonInfo(INS_P_PERSON_INFO){ //非车被保险人信息业务数据表
+				id	Long required, //ID	
+				version	Long required,//版本号	
+				address	String,//地址	
+				address2	String,//地址2	
+				area	String,//所在地区	
+				birthday	ZonedDateTime,//出生年月日	
+				businessSort	String,//业务分类	
+				businessType	String,//意外险行业代码	
+				city	String,//城市	
+				copies	Long,//购买分数	
+				email	String,//电子邮箱	
+				idNum	String,//证件号码	
+				idType	String,//证件类型	
+				job	String,//被保险人职业	
+				jobType	String,//被保险人职业类别	
+				name	String,//名称	
+				occupation	String,//职业	
+				occupationCode	String,//意外险职业代码	
+				phoneNum1	String,//手机	
+				phoneNum2	String,//固话	
+				phoneNum3	String,//紧急联系人电话	
+				postCode	String,//邮编	
+				propMapStr	String,//json串数据	CLOB
+				province	String,//省份	
+				relationShip	String,//与投保人关系	
+				sex	String,//性别	
+				type	String,//类型，投保人，初保险人	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+
+entity InsInvoiceInfo(INS_INVOICE_INFO){ //非车配送信息业务数据表
+				id	Long required, //ID	
+				version	Long required,//版本号	
+				address1	String,//省 市 区 ，用分号隔开
+				address2	String,//详细地址到门牌	
+				city	String,//城市	
+				invoiceName	String,//发票抬头	
+				mobilePhone	String,//手机电话	
+				name	String,//名称	
+				needDetailFlag	Long,//发票与保单标志	
+				needFlag	Long,//是否需要发票	
+				otherAddressFlag	Long,//其它收件人地址标志	
+				postCode	String,//邮编	
+				propMapStr	String,//json串数据	CLOB
+				province	String,//省份	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+entity InsPolicyInfo(INS_POLICY_INFO){ //非车险保单信息业务数据表
+				id	Long required, //ID	
+				version	Long required,//版本号	
+				address1	String,//省 市 区 ，用分号隔开	
+				address2	String,//详细地址到门牌	
+				city	String,//城市	
+				invoiceName	String,//发票抬头	
+				mobilePhone	String,//手机电话	
+				name	String,//名称	
+				needDetailFlag	Long,//发票与保单标志	
+				needFlag	Long,//是否需要发票	
+				otherAddressFlag	Long,//其它收件人地址标志	
+				postCode	String,//邮编	
+				propMapStr	String,//json串数据	 CLOB
+				province	String,//省份					
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+entity InsPersonInfo(INS_PERSON_INFO){ //非车险投保人信息业务数据表
+				id	Long required, //ID	
+				version	Long required,//版本号	
+				address	String,//地址	
+				address2	String,//地址2	
+				area	String,//区域	
+				birthday	ZonedDateTime,//生日	
+				businessSort	String,//业务分类	
+				businessType	String,//意外险行业代码	
+				city	String,//城市	
+				copies	Long,//购买份数	
+				email	String,//电子邮箱	
+				idNum	String,//证件号	
+				idType	String,//证件类型	
+				job	String,//被保险人职业	
+				jobType	String,//职业类型	
+				name	String,//名称	
+				occupation	String,//职业	
+				occupationCode	String,//职业代码	
+				phoneNum1	String,//电话号码1	
+				phoneNum2	String,//电话号码2	
+				phoneNum3	String,//电话号码3	
+				postCode	String,//邮编	
+				propMapStr	String,//json数据串	CLOB
+				province	String,//省	
+				relationShip	String,//与投保人关系	
+				sex	String,//性别	
+				type	String,//类型	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+
+entity InsItemkindInfo(INS_ITEMKIND_INFO){  //非车条款保障信息业务数据表
+				version	Long required,//版本号	
+				insureInfoId	Long required,//投保信息ID	
+				insured	BigDecimal,//保额	
+				kindCode	String required,//条款代码	
+				kindName	String,//条款名称	
+				premiums	BigDecimal,//保费	
+				propMapStr	String,//CLOB json串数据	
+				rate	BigDecimal,//费率	
+				selectFlag	Long,//默认选中标志	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+
+entity InsHouseInfo(INS_HOUSE_INFO){  //非车险房屋信息业务数据表
+				id	Long required, //ID	
+				version	Long required,//版本号	
+				address	String,//地址	
+				address1	String,//地址1	
+				address2	String,//地址2	
+				area	String,//地区	
+				city	String,//城市	
+				district	String,//区	
+				propMapStr	String,//json数据串	CLOB
+				province	String,//省	
+				structures	String,//建筑结构	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+
+entity InsureData(INSURE_DATA){ //非车险投保流程数据表
+				id	String required,//投保数据ID	
+				orderId	String,//订单ID	
+				version	Long required,//版本号	
+				insureStr	String,//投保信息	CLOB
+				policyBackStr	String,//保单返回信息	CLOB
+				policyNo	String,//保单号	
+				policyStr	String,//保单信息	CLOB
+				productCode	String required,//产品代码	
+				proposalBackStr	String,//投保单返回信息	CLOB
+				proposalNo	String,//投保单号	
+				proposalStr	String,//投保单信息	CLOB
+				quoteStr	String,//报价信息	CLOB
+				riskCode	String,//险种代码	
+				step	Long,//当前步骤	
+				userId	String,//用户ID	
+				dataSource	String,//业务数据来源	
+				dateCreated ZonedDateTime,// timestamp 创建时间
+				creator String,// varchar2(100 char) 创建人
+				lastUpdate ZonedDateTime,// timestamp 更新时间
+				modifier String// varchar2(100 char) 更新人
+}
+
+//InsInsureInfo(INSINSUREINFO){//非车投保信息业务数据表
+//InsPPersonInfo(INSPPERSONINFO){ //非车被保险人信息业务数据表
+//InsInvoiceInfo(INSINVOICEINFO){ //非车配送信息业务数据表
+//InsPolicyInfo(INSPOLICYINFO){ //非车险保单信息业务数据表
+//InsPersonInfo(INSPERSONINFO){ //非车险投保人信息业务数据表
+//InsItemkindInfo(INSITEMKINDINFO){  //非车条款保障信息业务数据表
+//InsHouseInfo(INS_HOUSEINFO){  //非车险房屋信息业务数据表
+//InsureData(INSUREDATA){ //非车险投保流程数据表
+
+relationship OneToOne {
+    InsPersonInfo{insInsureInfo(personId)} to InsInsureInfo{insPersonInfo}
+    InsPolicyInfo{insInsureInfo(policyId)} to InsInsureInfo{insPolicyInfo}
+    
+}
+relationship OneToMany {
+		InsInsureInfo{insItemkindInfo} to InsItemkindInfo{insInsureInfo(insuredId)}
+		InsInsureInfo{insPPersonInfo} to InsPPersonInfo{insInsureInfo(dataId)}
+}
+
+
+// Set pagination options
+paginate InsInsureInfo,InsPPersonInfo,InsInvoiceInfo,InsPolicyInfo,InsPersonInfo,InsItemkindInf,InsHouseInfo,InsureData with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with hbinsInsure
